@@ -19,7 +19,6 @@ app = FastAPI()
 
 @app.post("/task2")
 async def process_WIR_document(file: UploadFile = File(...)):
-    # import pdb; pdb.set_trace()
     try:
         wir_parser = WIRExtractParser()
         wir_data = await wir_parser.parse_wir_document(file.file)
