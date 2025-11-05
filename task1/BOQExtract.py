@@ -16,11 +16,16 @@ from utilities.ai_generator import OpenAITextGenerator, OpenAI_Text_Config
 
 class BOQExtractData(BaseModel):
     Scope: str
-    Refrences: str
+    References: str
     Materials: str
     WorkProcedure: str
 
-class BOQExtractParser(BaseModel):
+class MethodStatement(BaseModel):
+    MethodStatement: List[BOQExtractData]
+    follow_up_instructions: str
+    general_notes: str
+
+class BOQExtractParser:
     """This class is used to parse BOQ documents and extract relevant information."""
     def __init__(self):
         self.document_text_extractor = DocumentTextExtractor(
@@ -41,18 +46,18 @@ class BOQExtractParser(BaseModel):
         extracted_text = self.document_text_extractor.extract_text(file)
         return extracted_text
     
-    async def _ai_parse_prescription_text(self, BOQ_extracted_text: str) -> BOQExtractData:
+    async def _ai_parse_prescription_text(self, BOQ_extracted_text: str) -> MethodStatement:
         response = await self.ai_generator.async_generate_response(
             system_prompt=BOQ_EXTRACT_SYSTEM_PROMPT,
             user_prompt=BOQ_EXTRACT_USER_PROMPT.format(
                 BOQ_extracted_text=BOQ_extracted_text
             ),
-            response_model=BOQExtractData,
+            response_format=MethodStatement,
             project_name=BOQ_EXTRACT_NAME
         )
         return response["response"]
     
-    async def parse_boq_document(self, file: BinaryIO) -> BOQExtractData:
+    async def parse_boq_document(self, file: BinaryIO) -> MethodStatement:
         try:
             self._validate_file_type(file)
             

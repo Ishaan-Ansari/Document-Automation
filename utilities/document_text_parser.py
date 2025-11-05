@@ -11,6 +11,12 @@ from logger import loggerUtils
 from utilities.exceptions import UnsupportedFileTypeError
 from utilities.ocr import GoogleVisionOCRDetector
 
+try:
+    from docx import Document as DocxDocument
+except Exception:
+    DocxDocument = None  # type: ignore
+
+
 class OCRMode:
     IN_HOUSE = "in_house"
     ONLINE = "online"
@@ -18,6 +24,11 @@ class OCRMode:
 class DocumentTextExtractor:
     SUPPORTED_IMAGE_TYPES = {"image/png", "image/jpeg", "image/jpg", "image/tiff"}
     SUPPORTED_PDF_TYPE = "application/pdf"
+    # common MIME types for Word documents
+    SUPPORTED_DOC_TYPES = {
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document", # .docx
+    "application/msword", # .doc
+    }
 
     def __init__(self, ocr_mode: str = OCRMode.ONLINE):
         if ocr_mode not in {OCRMode.IN_HOUSE, OCRMode.ONLINE}:
@@ -55,6 +66,8 @@ class DocumentTextExtractor:
                 text = await self._extract_from_pdf(file)
             elif mime_type in self.SUPPORTED_IMAGE_TYPES:
                 text = await self._extract_from_image(file)
+            elif mime_type in self.SUPPORTED_DOC_TYPES:
+                text = await self._extract_from_doc(file)
             else:
                 raise UnsupportedFileTypeError(f"Unsupported file type: {mime_type}")
 
@@ -64,6 +77,20 @@ class DocumentTextExtractor:
             loggerUtils.exception(f"Error in DocumentTextExtractor.extract_text: {e}")
             raise e
 
+    async def _extract_from_doc(self, file: BinaryIO) -> str:
+        """Extract text from a Word document"""
+        if DocxDocument is None:
+            raise UnsupportedFileTypeError("python-docx library is not installed.")
+
+        file.seek(0)
+        document = DocxDocument(file)
+        full_text = []
+
+        for para in document.paragraphs:
+            full_text.append(para.text)
+
+        return "\n\n".join(full_text)
+    
     async def _extract_from_pdf(self, file: BinaryIO) -> str:
         """Extract text from a PDF file"""
         file.seek(0)

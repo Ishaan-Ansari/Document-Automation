@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "yolomed-443910",
+  "private_key_id": "adfa32d6e6a060908729b6ae55873acfdefa93e5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpnlVPYQpbJ5Wv\nbb/jlqJDOzlkTotGYvYmmKFCCbUGoEOglzDYRMoNa0YPOU8MIabeHby2IiIJXHwl\nwVeqZdiLPEgv70Wa64EgRyG2ZTgOHm3TWysUxm2oSQXTHPYgddimKleetNyGbsKF\n4kaDsSBK8JNC5laAeU3mg7Sa4+JcP/Ttpras53hDAGfXhYjtAGtJhZ5MvxWMzVuT\n/6R4OSFWQ5F1pYhqBfy2Xt7jUfAWNCje4u0+9n3vxclsWZ89fVxtYyZ07e5kG4wr\nzhdfFU59QDzFhOXhPtKlHO40MW7m9Nx34IPSYLpHVvn2KSLViEHkX4RHi/X8OjgT\n3MagiGTFAgMBAAECggEAANej6whSTbzMsgmoBwz+kF5pCGA96MDTj5247d0QQ2d7\naxEkAX5f9hMroN0VY3LbMQpEH4tJx3voau0nV8OKpV4Vqh5reJuqA3bF03r0Rn1j\njZgwa0KsAqtCdC5odcoqUbwTvWO1noLczYPEVoYoxYDJ2dwqepftVyWdpz7WQnsV\nwby1ofkYViOGbpp2r6SKCuiuuYkVdCdoFcAcmDsyUzIrgFsKNUmcok0abA2gILL/\nCx3ZvJxduVWngfzNBZbZZoalao1OhJXiQct+YPNgEgsfqRObbi8NVymde18dTNVz\nV8CXSlz18zj2IY1wBEhMMZDVel2CVAfRAYunk66CCQKBgQDdYDKFMNB8njSwHNvX\nKVqV6E6asH2/ImlK+KqeCnyahQnWUTokDCRLewLS75h2c6Z/8LvJLXzavSXTR4Co\nbjRa5gFEZY7xghSpadnSot1SrOF5h4ZI4QBJRwgfETnxGw+jw8RGX77507pIHnEm\nrF4jz4f/2f+NLVBnU2kbVFrQnQKBgQDEJcs2JRQ9R1vw72q846K1wtpuU/UMhBBx\nywSGD4Ms3ibWrh7ur4uf8IiCQ4YX7ekFH3P5iikdt20K9fHDAr0BO9XHYrZh5r1E\n02YLP0N03nW/92oPBW1KTR7kjY4nHjQh/H+mr/u1PUSaEOppUiC5wsrXc24Hze2/\nYyUrNzYISQKBgQCl/EIFEdPRDIJu5kSD8JLmQbfmTp0KWg/e0dKEC1LgPQ5iLqdM\nbfosykAUzudfMVnPJj53Gm86R4Z8A2nZYEBLQ5gBo7BpLuK1IBPd1pXiLpQlHlO2\ng1ZGm0bgnHb4bBTu8pNRPOshwPo0pvaqS6WObkYHtXnibe6Ser0da8NoFQKBgHhO\nig6ivYA8dYsY/gnvQUxkwF8tRb8wfXmeQR8NArMRaxb/418Y8vXdrYzgZ63jsan/\nub2T3VYpvEsdwPSQiGbqUVwjEqSHxw0g8JTzb6eODwD4eufNt1P8a3dZz5f0sZsq\n6QzPIf7vHlW1DGIfCo2Fia6OUS2eRDXAVPrluVFpAoGBAIBnDrgvzZwlLswTPeu8\n6LoAu3igyisco8AUZ0rMbgagas/tyU5NC4+eehUB5AXfLUWd3wzDYsCFFCShUMKT\n4yB+zXl0Fj8CqWO4yUHFqQICQOLPqVLHStqPTh2RnLVgC8M2ZxmO92Xz8HMWRaS+\nq1IGNWlq49++vzVtiODOrIBP\n-----END PRIVATE KEY-----\n",
+  "client_email": "yolomed-digital-twin@yolomed-443910.iam.gserviceaccount.com",
+  "client_id": "108374668535014489015",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/yolomed-digital-twin%40yolomed-443910.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

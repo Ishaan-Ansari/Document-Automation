@@ -12,10 +12,10 @@ Ensure the output follows the following specified format:
 {
   "MethodStatement": [
         {{
-            "Scope": "<Detailed scope of work>",
-            "References": "<Relevant standards and references>",
-            "Materials": "<List of materials to be used>",
-            "WorkProcedure": "<Step-by-step work procedure>"
+            "Scope": "string",
+            "References": "string",
+            "Materials": "string",
+            "WorkProcedure": "string"
         }}
     ],
     "follow_up_instructions": "string",
@@ -23,7 +23,6 @@ Ensure the output follows the following specified format:
 }
 
 - Ensure the JSON is properly formatted and valid.
-- Ensure the values are filled in appropriately based on the BOQ extract provided.
 """
 
 BOQ_EXTRACT_USER_PROMPT = """

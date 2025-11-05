@@ -327,7 +327,7 @@ class OpenAI_Text_Config(BaseGeneratorConfig):
                 - temperature (float): Controls randomness in responses
                 - seed (int): Seed for reproducible responses
         """
-        self.model: str = kwargs.get("model", GPT_Model.GPT_4O_MINI.value)
+        self.model: str = kwargs.get("model", GPT_Model.GPT_40_MINI.value)
         self.max_tokens: Optional[int] = kwargs.get("max_tokens", None)
         self.temperature = kwargs.get("temperature", 0.3)
         self.seed = kwargs.get("seed", DEFAULT_OPENAI_SEED_VALUE)

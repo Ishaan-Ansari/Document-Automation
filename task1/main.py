@@ -13,8 +13,13 @@ from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 from fastapi import FastAPI, File, UploadFile, HTTPException
 
+from utilities.exceptions import UnsupportedFileTypeError
 
-async def process_boq_document(file: UploadedFile = File(...)):
+app = FastAPI()
+
+@app.post("/task1")
+async def process_boq_document(file: UploadFile = File(...)):
+    # import pdb; pdb.set_trace()
     try:
         boq_parser = BOQExtractParser()
         boq_data = await boq_parser.parse_boq_document(file.file)
