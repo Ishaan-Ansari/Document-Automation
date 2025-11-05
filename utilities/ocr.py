@@ -55,7 +55,7 @@ class GoogleVisionOCRDetector:
         """Asynchronously detects text in an image"""
         image = self.get_vision_image(image)
         loop = asyncio.get_running_loop()
-        response = await loop.run_in_executor(None, lambda: self.client.text_detection, image)
+        response = await loop.run_in_executor(None, lambda: self.client.text_detection(image=image))
         return self.detect_text_annotation_from_response(response)
     
     async def detect_multiple_images_text_async(self, images: list[BytesIO]):
