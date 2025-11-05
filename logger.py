@@ -40,5 +40,7 @@ def setup_logger(app_name: str, log_dir: str = 'logs'):
 
 # logger for tasks
 loggerT1 = setup_logger("task_1")
+loggerT2 = setup_logger("task_2")
 
+# logger for utilities
 loggerUtils = setup_logger("utilities")
