@@ -9,7 +9,6 @@ from openai.types.chat.chat_completion import ChatCompletion
 from config import OPENAI_API_KEY
 from constants import DEFAULT_OPENAI_SEED_VALUE, GPT_Model
 from logger import loggerUtils as logger
-from utilities.token_tracker.decorators import track_llm_usage
 
 OPENAI_CLIENT = OpenAI(api_key=OPENAI_API_KEY)
 ASYNC_OPENAI_CLIENT = AsyncOpenAI(api_key=OPENAI_API_KEY)
@@ -98,7 +97,6 @@ class OpenAIVisionTextGenerator(VisionTextGenerator):
     def __init__(self, config: Optional[OpenAI_Vision_Config] = None) -> None:
         self.config = OpenAI_Vision_Config.get_or_create(config)
 
-    @track_llm_usage
     def generate_response(
         self,
         user_prompt: Optional[str] = None,
@@ -192,7 +190,6 @@ class OpenAIVisionTextGenerator(VisionTextGenerator):
             "user_prompt": self.user_prompt,
         }
 
-    @track_llm_usage
     async def async_generate_response(
         self,
         user_prompt: Optional[str] = None,
@@ -371,7 +368,6 @@ class OpenAITextGenerator(BaseGenerator):
     def __init__(self, config: Optional[OpenAI_Text_Config] = None) -> None:
         self.config: OpenAI_Text_Config = OpenAI_Text_Config.get_or_create(config)
 
-    @track_llm_usage
     def generate_response(
         self,
         user_prompt: str,
@@ -492,7 +488,6 @@ class OpenAITextGenerator(BaseGenerator):
             "user_prompt": self.user_prompt,
         }
 
-    @track_llm_usage
     async def async_generate_response(
         self,
         user_prompt: str,
