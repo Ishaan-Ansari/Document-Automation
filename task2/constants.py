@@ -1,0 +1,1 @@
+WIR_EXTRACT_NAME = "SCANNED-WIR-Document-Parser"
