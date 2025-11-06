@@ -20,9 +20,23 @@
 </div>
 
 
+## 🛠️ How to Use
+1. Clone the repository:
+   ```bash
+   git clone ttps://github.com/Ishaan-Ansari/Document-Automation.git
+   ```
+2. Navigate to a specific task folder:
+   ```bash
+   cd Document-Automation/[Folder_Name]
+   ```
+3. Run app.py:
+   ```bash
+   python app.py
+   ```
 
 
-## 📝 Citation
+
+## Citation
 ```
 @misc{Document Automation,
       title={DocumentAutomation: Modular codebase for analyzing various construction documents}, 
