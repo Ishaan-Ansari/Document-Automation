@@ -25,7 +25,7 @@
    ```bash
    git clone ttps://github.com/Ishaan-Ansari/Document-Automation.git
    ```
-2. Navigate to a specific task folder:
+2. For Results, navigate to a specific task folder:
    ```bash
    cd Document-Automation/[Folder_Name]
    ```
@@ -34,6 +34,10 @@
    python app.py
    ```
 
+> [!NOTE]
+>
+> Initialize credentials.
+>
 
 
 ## Citation
