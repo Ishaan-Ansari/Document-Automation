@@ -25,7 +25,7 @@
 ## 📝 Citation
 ```
 @misc{Document Automation,
-      title={DocumentAutomation: Modular codebase for analyzing various documents}, 
+      title={DocumentAutomation: Modular codebase for analyzing various construction documents}, 
       author={Mohammad Ishaan Hasan Ansari},
       year={2025},
       url={https://github.com/Ishaan-Ansari/Document-Automation}, 
