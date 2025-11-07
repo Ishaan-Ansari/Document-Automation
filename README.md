@@ -29,27 +29,23 @@
    ```bash
    cd Document-Automation/[Folder_Name]
    ```
-3. Run app.py:
+3. Set up the virtual environment:
+   ```bash
+   uv venv
+   ```
+4. Sync .venv with pyproject.tomml:
+   ```bash
+   uv sync
+   ```
+5. Run app.py:
    ```bash
    python app.py
    ```
 
 > [!NOTE]
 >
-> Initialize credentials.
+> Make sure you have initialized the credentials in .env file.
 >
-
-
-## Citation
-```
-@misc{Document Automation,
-      title={DocumentAutomation: Modular codebase for analyzing various construction documents}, 
-      author={Mohammad Ishaan Hasan Ansari},
-      year={2025},
-      url={https://github.com/Ishaan-Ansari/Document-Automation}, 
-}
-
-```
 
 
 
