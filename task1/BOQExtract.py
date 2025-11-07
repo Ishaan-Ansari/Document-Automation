@@ -43,7 +43,7 @@ class BOQExtractParser:
 
     async def _extract_text_from_doc(self, file: BinaryIO) -> str:
         file.seek(0)
-        extracted_text = self.document_text_extractor.extract_text(file)
+        extracted_text = await self.document_text_extractor.extract_text(file)
         return extracted_text
     
     async def _ai_parse_prescription_text(self, BOQ_extracted_text: str) -> MethodStatement:
