@@ -33,11 +33,11 @@
    ```bash
    uv venv
    ```
-4. Sync .venv with pyproject.tomml:
+4. Sync `.venv` with `pyproject.toml`:
    ```bash
    uv sync
    ```
-5. Run app.py:
+5. Run `app.py`:
    ```bash
    python app.py
    ```
