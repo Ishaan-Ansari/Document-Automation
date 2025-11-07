@@ -11,7 +11,7 @@
     <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
 </p>
 
-#### Author: [Mohd. Ishaan Hasan Ansari](https://ishaan-ansari.github.io/)
+#### Author: [Mohd. Ishaan Hasan Ansari](https://www.linkedin.com/in/ishaanansari/)
 
 
 <div align="left" style="margin:24px 0;">
