@@ -46,28 +46,40 @@ class BOQExtractParser:
         extracted_text = await self.document_text_extractor.extract_text(file)
         return extracted_text
     
-    async def _ai_parse_prescription_text(self, BOQ_extracted_text: str) -> MethodStatement:
+    async def _ai_parse_prescription_text(
+            self, 
+            BOQ_extracted_text: str,
+            project_details_text: str 
+    ) -> MethodStatement:
         response = await self.ai_generator.async_generate_response(
             system_prompt=BOQ_EXTRACT_SYSTEM_PROMPT,
             user_prompt=BOQ_EXTRACT_USER_PROMPT.format(
-                BOQ_extracted_text=BOQ_extracted_text
+                BOQ_extracted_text=BOQ_extracted_text,
+                project_details_text=project_details_text
             ),
             response_format=MethodStatement,
             project_name=BOQ_EXTRACT_NAME
         )
         return response["response"]
     
-    async def parse_boq_document(self, file: BinaryIO) -> MethodStatement:
+    async def parse_boq_document(
+            self, 
+            boq_file: BinaryIO,
+            project_details_file: BinaryIO
+    ) -> MethodStatement:
         try:
-            self._validate_file_type(file)
+            self._validate_file_type(boq_file)
+            self._validate_file_type(project_details_file)
             
-            document_text = await self._extract_text_from_doc(file)
+            boq_data = await self._extract_text_from_doc(boq_file)
+            project_details_text = await self._extract_text_from_doc(project_details_file)            
 
-            boq_data = await self._ai_parse_prescription_text(
-                BOQ_extracted_text=document_text
+            method_statement = await self._ai_parse_prescription_text(
+                BOQ_extracted_text=boq_data,
+                project_details_text=project_details_text
             )
 
-            return boq_data
+            return method_statement
     
         except UnsupportedFileTypeError as e:
             loggerT1.exception(f"Error parsing document: {e}")

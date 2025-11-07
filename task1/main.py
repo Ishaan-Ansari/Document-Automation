@@ -72,10 +72,16 @@ def _create_ms_document(boq_data: MethodStatement) -> io.BytesIO:
     
 
 @app.post("/task1")
-async def process_boq_document(file: UploadFile = File(...)):
+async def process_boq_document(
+    BOQ_file: UploadFile = File(...),
+    project_details_file: UploadFile = File(...)
+    ):
     try:
         boq_parser = BOQExtractParser()
-        boq_data = await boq_parser.parse_boq_document(file.file)
+        boq_data = await boq_parser.parse_boq_document(
+            boq_file=BOQ_file.file,
+            project_details_file=project_details_file.file)
+
         
         # return JSONResponse(content=jsonable_encoder(boq_data))
         document_stream = _create_ms_document(boq_data)
