@@ -23,7 +23,7 @@
 ## 🛠️ How to Use
 1. Clone the repository:
    ```bash
-   git clone ttps://github.com/Ishaan-Ansari/Document-Automation.git
+   git clone https://github.com/Ishaan-Ansari/Document-Automation.git
    ```
 2. For Results, navigate to a specific task folder:
    ```bash
